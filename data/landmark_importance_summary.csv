@@ -1,0 +1,12 @@
+landmark,coef_importance,ablation_dED_mm,selection_freq_top5_of4
+SLMS,1.53,0.062,2
+LVPC,1.04,-0.036,4
+SIPF,0.96,-0.004,2
+LVAC,0.87,0.019,4
+ILMS,0.71,-0.041,1
+MB,0.69,-0.009,3
+ICS,0.6,-0.037,2
+PMJ,0.59,-0.027,2
+IMS,0.4,-0.022,0
+AC,0.21,0.0,0
+PC,0.21,0.0,0

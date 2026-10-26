@@ -6,7 +6,6 @@ import re
 from itertools import cycle
 from plotly.offline import plot
 import plotly.graph_objs as go
-import matplotlib.cm as cm
 import random as rand
 import nibabel as nib
 import base64
@@ -419,7 +418,7 @@ def plot_multiple_files(file_list, out_file, rotation=False, trace_lines=True, s
     # Get unique AFIDs and assign colors
     unique_afids = list(set(all_afids))
     rand.shuffle(unique_afids)
-    color_map = cm.get_cmap('tab20', len(unique_afids))  # Use tab20 colormap for a wide range
+    color_map = plt.colormaps['tab20'].resampled(len(unique_afids))  # Use tab20 colormap for a wide range
     afid_colors = {afid: color_map(i) for i, afid in enumerate(unique_afids)}
 
     # Convert colors to RGBA format
@@ -846,14 +845,14 @@ def predict_stn_coordinates(
     Returns
     -------
     y_pred : np.ndarray
-        Predicted STN coordinates, shape (82, 3).
+        Predicted STN coordinates, shape (2, 3).
     """
 
     # Load subject AFIDs
     df = fcsvtodf(subject_afid_path)[0]
 
     # values between -0.01 and 0.01 are set to zero
-    df.map(make_zero) 
+    df = df.map(make_zero)
 
     df_proc = flip_and_concatenate_hemispheres(df)
 
@@ -894,6 +893,17 @@ def remove_outliers(df, cols, threshold=3.5):
     return df
 
 def create_list(n):
+    # WARNING: returns BLOCK-ORDER group labels [1..n, 1..n], for use as GroupKFold
+    # `groups` ONLY when the corresponding rows are also block-ordered (i.e. all
+    # n "original" hemisphere rows followed by all n "mirrored" rows, as produced
+    # directly by flip_and_concatenate_hemispheres). If the rows were instead
+    # reordered by a `.loc[list_of_subject_ids]` selection on a duplicate-indexed
+    # DataFrame, the result is PAIRED-ADJACENT ([row1, row1_mirror, row2, ...]),
+    # and this function's labels will NOT correspond to true subject identity
+    # (verified: this caused every subject's mirrored pair to leak across
+    # train/test in GroupKFold in notebooks/2.4_Data_Split_and_ML.ipynb). Prefer
+    # deriving groups directly from the true row index (e.g. `df.index.to_numpy()`)
+    # whenever the row order is not guaranteed to be block-ordered.
     numbers = list(range(1, n + 1))  # Create a list of numbers from 1 to n
     repeated_numbers = cycle(numbers)  # Create a cycle iterator for the numbers
     result = [next(repeated_numbers) for _ in range(n * 2)]  # Generate n*2 elements by cycling through the numbers
