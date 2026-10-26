@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the article below."
+title: "AFIDs-Pred: code and data for a coordinate-to-coordinate machine learning framework for contrast-agnostic brain target localization"
+type: software
+license: MIT
+repository-code: "https://github.com/afids/afids-pred"
+url: "https://stereotaxy.afids.io"
+keywords:
+  - deep brain stimulation
+  - subthalamic nucleus
+  - anatomical fiducials
+  - stereotaxy
+  - machine learning
+authors: &authors
+  - family-names: Taha
+    given-names: Alaa
+    affiliation: "Stanford University School of Medicine; Robarts Research Institute, Western University"
+  - family-names: Thrower
+    given-names: Jaime
+    affiliation: "Robarts Research Institute, Western University"
+  - family-names: Bansal
+    given-names: Dhananjhay
+    affiliation: "Robarts Research Institute, Western University"
+  - family-names: Thurairajah
+    given-names: Arun
+    affiliation: "Robarts Research Institute, Western University"
+  - family-names: Abbass
+    given-names: Mohamad
+    affiliation: "Robarts Research Institute, Western University"
+  - family-names: Snyder
+    given-names: Mackenzie
+    affiliation: "Robarts Research Institute, Western University"
+  - family-names: Zhao
+    given-names: Joy
+    affiliation: "Robarts Research Institute, Western University"
+  - family-names: Coskun
+    given-names: Ezgi
+    affiliation: "Robarts Research Institute, Western University"
+  - family-names: Liu
+    given-names: Violet
+    affiliation: "Robarts Research Institute, Western University"
+  - family-names: Gilmore
+    given-names: Greydon
+    affiliation: "Robarts Research Institute, Western University"
+  - family-names: Khan
+    given-names: Ali R.
+    affiliation: "Robarts Research Institute, Western University"
+  - family-names: Lau
+    given-names: Jonathan C.
+    affiliation: "Robarts Research Institute, Western University"
+preferred-citation:
+  type: article
+  title: "A coordinate-to-coordinate machine learning framework for contrast-agnostic brain target localization"
+  authors: *authors
+  status: submitted

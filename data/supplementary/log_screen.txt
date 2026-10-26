@@ -1,0 +1,42 @@
+
+===== screen =====
+  repeat 0 fold 0 done
+  repeat 0 fold 1 done
+  repeat 0 fold 2 done
+  repeat 0 fold 3 done
+  repeat 1 fold 0 done
+  repeat 1 fold 1 done
+  repeat 1 fold 2 done
+  repeat 1 fold 3 done
+  repeat 2 fold 0 done
+  repeat 2 fold 1 done
+  repeat 2 fold 2 done
+  repeat 2 fold 3 done
+  repeat 3 fold 0 done
+  repeat 3 fold 1 done
+  repeat 3 fold 2 done
+  repeat 3 fold 3 done
+  repeat 4 fold 0 done
+  repeat 4 fold 1 done
+  repeat 4 fold 2 done
+  repeat 4 fold 3 done
+        model  median_ED  mean_ED    sd_ED  p_holm_vs_ridge
+        Ridge   0.847760 0.957057 0.460564              NaN
+BayesianRidge   0.898944 0.953843 0.457957     5.148086e-01
+          PLS   0.901788 1.001567 0.483312     1.134774e-01
+ RandomForest   0.908387 1.029049 0.504532     8.717715e-02
+          SVR   0.922425 0.994850 0.477045     7.144184e-03
+   ElasticNet   0.926073 0.980419 0.485020     8.717715e-02
+        Lasso   0.964911 1.006506 0.495244     1.771822e-02
+      XGBoost   0.993919 1.055386 0.498272     3.284732e-03
+          KNN   1.020091 1.095103 0.511385     2.150870e-04
+          MLP   1.952083 2.207324 0.954265     1.598721e-14
+metric  ridge_median  xgb_median        p   p_bonf  frac_subjects_ridge_better
+  se_x      0.196490    0.258943 0.002705 0.010821                        0.72
+  se_y      0.317994    0.362109 0.001540 0.006158                        0.68
+  se_z      0.201811    0.223718 0.954225 1.000000                        0.48
+    ed      0.887695    0.961259 0.000469 0.001877                        0.72
+group    n  median_ED
+   HC 32.0   0.801460
+   PD 18.0   1.129334
+MWU p  NaN   0.003494

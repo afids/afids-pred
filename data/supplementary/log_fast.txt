@@ -1,0 +1,58 @@
+
+===== pca =====
+{'variance': 0.8, 'n_components': np.int64(10), 'cv_median_ED': np.float64(0.8771650181786725), 'test_median_ED': np.float64(1.2577586874532174), 'test_q25': np.float64(0.994902212301239), 'test_q75': np.float64(1.484760989362982)}
+{'variance': 0.9, 'n_components': np.int64(15), 'cv_median_ED': np.float64(0.9106410878608502), 'test_median_ED': np.float64(1.2912897573820212), 'test_q25': np.float64(0.9411359954946281), 'test_q75': np.float64(1.5036334336787585)}
+{'variance': 0.95, 'n_components': np.int64(18), 'cv_median_ED': np.float64(0.8784191812864957), 'test_median_ED': np.float64(1.2432343737708558), 'test_q25': np.float64(0.9264709074347851), 'test_q75': np.float64(1.4716913680965926)}
+{'variance': 0.99, 'n_components': np.int64(24), 'cv_median_ED': np.float64(0.8477601403402499), 'test_median_ED': np.float64(1.2248441363658127), 'test_q25': np.float64(0.9011433111706654), 'test_q75': np.float64(1.4920206435639414)}
+{'variance': 0.995, 'n_components': np.int64(25), 'cv_median_ED': np.float64(0.8517012728345679), 'test_median_ED': np.float64(1.224463104507573), 'test_q25': np.float64(0.9011962053170127), 'test_q75': np.float64(1.5090483188006736)}
+{'variance': 0.999, 'n_components': np.int64(27), 'cv_median_ED': np.float64(0.8624701023392838), 'test_median_ED': np.float64(1.2443422057141817), 'test_q25': np.float64(0.8934716283131123), 'test_q75': np.float64(1.5085714609836747)}
+{'variance': 'none (33 features)', 'n_components': 33, 'cv_median_ED': np.float64(0.862470102339284), 'test_median_ED': np.float64(1.2443422057141822), 'test_q25': np.float64(0.8934716283131121), 'test_q75': np.float64(1.5085714609836747)}
+
+===== ablation =====
+{'mirroring': True, 'pca_pool': True, 'n_train_rows': 100, 'n_components': np.int64(24), 'cv_median_ED': np.float64(0.8477601403402499), 'test_median_ED': np.float64(1.224844136365813), 'test_q25': np.float64(0.9011433111706646), 'test_q75': np.float64(1.4920206435639414)}
+{'mirroring': True, 'pca_pool': False, 'n_train_rows': 100, 'n_components': np.int64(23), 'cv_median_ED': np.float64(0.8387693348109424), 'test_median_ED': np.float64(1.233766475473947), 'test_q25': np.float64(0.9108290580003919), 'test_q75': np.float64(1.4745479846189595)}
+{'mirroring': False, 'pca_pool': True, 'n_train_rows': 50, 'n_components': np.int64(24), 'cv_median_ED': np.float64(0.8366918013330262), 'test_median_ED': np.float64(1.1746675579977164), 'test_q25': np.float64(0.8649111595048417), 'test_q75': np.float64(1.5127344474021402)}
+{'mirroring': False, 'pca_pool': False, 'n_train_rows': 50, 'n_components': np.int64(22), 'cv_median_ED': np.float64(0.834705533901937), 'test_median_ED': np.float64(1.1797202085452398), 'test_q25': np.float64(0.9067938580923278), 'test_q75': np.float64(1.5904022204656934)}
+
+===== curve =====
+8 1.4782233835106404
+12 1.3997121408385738
+16 1.3631883476543907
+20 1.349273322175787
+25 1.2951230793423907
+30 1.2851260944077962
+35 1.288668385043736
+40 1.2469118412417388
+45 1.2322120078184282
+50 1.2248441363658136
+
+===== landmarks =====
+landmark       dED  full_model_median_ED
+    LVPC  0.071362              0.881399
+     PMJ  0.048801              0.881399
+    LVAC  0.042529              0.881399
+    SLMS  0.040952              0.881399
+    SIPF  0.014523              0.881399
+      MB  0.011461              0.881399
+    ILMS -0.003946              0.881399
+      AC -0.007245              0.881399
+      PC -0.007245              0.881399
+     IMS -0.018583              0.881399
+     ICS -0.018827              0.881399
+ k  median_outer_ED      q25      q75
+ 1         1.032357 0.737535 1.484302
+ 2         0.902460 0.712975 1.406337
+ 3         0.916800 0.684775 1.376286
+ 4         0.848832 0.615096 1.408589
+ 5         0.870533 0.631065 1.299024
+ 6         0.873611 0.646019 1.278207
+ 7         0.900661 0.612936 1.209483
+ 8         0.862049 0.644364 1.206785
+ 9         0.904605 0.646917 1.159284
+10         0.868924 0.627415 1.169413
+11         0.881399 0.606558 1.282137
+     0     1     2     3     4     5     6     7     8     9    10
+0  SLMS    AC    PC  LVPC    MB  ILMS  LVAC   IMS  SIPF   ICS  PMJ
+1    MB  SLMS    AC  SIPF    PC  ILMS   IMS  LVAC   PMJ  LVPC  ICS
+2  SLMS  LVAC  LVPC  ILMS    MB   PMJ  SIPF    AC    PC   IMS  ICS
+3  LVAC  SIPF  LVPC   ICS  SLMS    AC    PC  ILMS    MB   PMJ  IMS

@@ -1,3 +1,21 @@
-# Ignore Mac system files
-.DS*
-.sub*
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.DS_Store
+~$*
+*.nii
+*.nii.gz
+!resources/**/*.nii.gz
+.venv/
+figures/.preview/
+figures/panels/
+# outputs written by executing notebooks 2.1-2.6
+figures/*.png
+figures/*.gif
+!figures/all_coordinates.gif
+figures/*.html
+!figures/all_coordinates_interactive.html
+notebooks/*.csv
+notebooks/*.pkl
+resources/models/afids_stn_model_retrained.pkl
+executed_notebooks/
